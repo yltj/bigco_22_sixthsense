@@ -2,7 +2,7 @@ base tutorial: https://www.raywenderlich.com/21133526-firebase-tutorial-getting-
 backend setup using [Firebase](https://spotiobook-default-rtdb.firebaseio.com/) <br/>
     
 currently working: 
-- user signup/login 
+- user signup/login, existing user email/password: user@email.com/password, user2@email.com/password
 
 todo:
 - books home page
