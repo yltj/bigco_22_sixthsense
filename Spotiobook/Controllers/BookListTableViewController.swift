@@ -4,11 +4,13 @@ import Firebase
 class BookListTableViewController: UITableViewController {
   // MARK: Constants
   let listToUsers = "ListToUsers"
+  let showDetail = "showDetail"
 
   // MARK: Properties
   var items: [Book] = []
   var user: User?
   var onlineUserCount = UIBarButtonItem()
+  var selectedBook: Book?
   
   let ref = Database.database().reference(withPath: "books")
   var refObservers: [DatabaseHandle] = []
@@ -96,7 +98,21 @@ class BookListTableViewController: UITableViewController {
       tableView.reloadData()
     }
   }
-
+  
+  // MARK: Select Book
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let bookItem = items[indexPath.row]
+    selectedBook = bookItem
+    self.performSegue(withIdentifier: showDetail, sender: nil)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == showDetail {
+          let detailController = segue.destination as! BookDetailViewController
+          detailController.book = selectedBook
+      }
+  }
+  
   // MARK: Add Item
   @IBAction func addItemDidTouch(_ sender: AnyObject) {
     let alert = UIAlertController(

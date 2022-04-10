@@ -191,10 +191,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" textLabel="XXw-TV-N7F" detailTextLabel="cRc-H7-cDb" rowHeight="144" style="IBUITableViewCellStyleSubtitle" id="EuG-QY-az6">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" textLabel="XXw-TV-N7F" detailTextLabel="cRc-H7-cDb" rowHeight="144" style="IBUITableViewCellStyleSubtitle" id="EuG-QY-az6" customClass="UI">
                                 <rect key="frame" x="0.0" y="28" width="414" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EuG-QY-az6" id="9IL-4T-l7S">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EuG-QY-az6" id="9IL-4T-l7S" customClass="UITableViewCell">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -231,6 +231,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <segue destination="59S-hE-qcY" kind="show" identifier="ListToUsers" id="39p-NX-3iE"/>
+                        <segue destination="u5D-la-S2v" kind="show" identifier="showDetail" id="Woe-fv-80g"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vuu-Ke-RfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -240,6 +241,7 @@
         <!--Navigation Controller-->
         <scene sceneID="c7m-BI-IO9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbW-4K-Igg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pqb-l0-WHh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="07L-tU-WK4">
@@ -256,9 +258,53 @@
                         <segue destination="Cf0-4p-A3W" kind="relationship" relationship="rootViewController" id="gCg-56-8mx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fbW-4K-Igg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="334" y="398"/>
+        </scene>
+        <!--Book Detail View Controller-->
+        <scene sceneID="cKD-rw-aig">
+            <objects>
+                <viewController storyboardIdentifier="BookDetailViewController" id="u5D-la-S2v" customClass="BookDetailViewController" customModule="Spotiobook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FHk-0N-9bp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fEl-yT-6pP">
+                                <rect key="frame" x="30" y="188" width="150" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Und-aH-b7n"/>
+                                    <constraint firstAttribute="width" constant="150" id="YEy-53-IuF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Super Super Super Super Long Label" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyH-tb-jMp">
+                                <rect key="frame" x="188" y="188" width="216" height="142"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zbk-kG-BfC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zbk-kG-BfC" firstAttribute="bottom" secondItem="fEl-yT-6pP" secondAttribute="bottom" constant="474" id="433-ej-lfI"/>
+                            <constraint firstItem="jyH-tb-jMp" firstAttribute="top" secondItem="zbk-kG-BfC" secondAttribute="top" constant="100" id="6N1-JI-Whb"/>
+                            <constraint firstItem="zbk-kG-BfC" firstAttribute="bottom" secondItem="jyH-tb-jMp" secondAttribute="bottom" constant="532" id="8xt-HB-mRh"/>
+                            <constraint firstItem="fEl-yT-6pP" firstAttribute="top" secondItem="zbk-kG-BfC" secondAttribute="top" constant="100" id="HdH-XM-E2t"/>
+                            <constraint firstAttribute="trailing" secondItem="jyH-tb-jMp" secondAttribute="trailing" constant="10" id="Wbc-4g-4QZ"/>
+                            <constraint firstItem="fEl-yT-6pP" firstAttribute="leading" secondItem="zbk-kG-BfC" secondAttribute="leading" constant="30" id="dbO-MM-p3m"/>
+                            <constraint firstItem="jyH-tb-jMp" firstAttribute="leading" secondItem="fEl-yT-6pP" secondAttribute="trailing" constant="8" symbolic="YES" id="g0M-Wz-vaQ"/>
+                            <constraint firstItem="jyH-tb-jMp" firstAttribute="leading" secondItem="fEl-yT-6pP" secondAttribute="trailing" constant="8" symbolic="YES" id="xPa-X9-qpD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="blK-wp-22G"/>
+                    <connections>
+                        <outlet property="img" destination="fEl-yT-6pP" id="MAr-mj-lsq"/>
+                        <outlet property="lbl" destination="jyH-tb-jMp" id="QmK-sA-UNH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wv4-LG-FeN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2121.739130434783" y="1127.6785714285713"/>
         </scene>
     </scenes>
     <resources>
@@ -268,6 +314,9 @@
         <namedColor name="rw-light">
             <color red="0.94900000095367432" green="0.9649999737739563" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
