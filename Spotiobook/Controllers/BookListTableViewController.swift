@@ -1,16 +1,18 @@
 import UIKit
 import Firebase
 
-class GroceryListTableViewController: UITableViewController {
+class BookListTableViewController: UITableViewController {
   // MARK: Constants
   let listToUsers = "ListToUsers"
+  let showDetail = "showDetail"
 
   // MARK: Properties
-  var items: [Recording] = []
+  var items: [Book] = []
   var user: User?
   var onlineUserCount = UIBarButtonItem()
+  var selectedBook: Book?
   
-  let ref = Database.database().reference(withPath: "recordings")
+  let ref = Database.database().reference(withPath: "books")
   var refObservers: [DatabaseHandle] = []
   var handle: AuthStateDidChangeListenerHandle?
 
@@ -32,23 +34,25 @@ class GroceryListTableViewController: UITableViewController {
     onlineUserCount.tintColor = .white
     navigationItem.leftBarButtonItem = onlineUserCount
     user = User(uid: "FakeId", email: "hungry@person.food")
+    
   }
 
   override func viewWillAppear(_ animated: Bool) {
     let completed = ref.observe(.value) { snapshot in
       // 2
-      var newItems: [Recording] = []
+      var newItems: [Book] = []
       // 3
       for child in snapshot.children {
         // 4
         if
           let snapshot = child as? DataSnapshot,
-          let groceryItem = Recording(snapshot: snapshot) {
-          newItems.append(groceryItem)
+          let bookItem = Book(snapshot: snapshot) {
+          newItems.append(bookItem)
         }
       }
       self.items = newItems
       self.tableView.reloadData()
+      
     }
     refObservers.append(completed)
     handle = Auth.auth().addStateDidChangeListener { _, user in
@@ -71,15 +75,18 @@ class GroceryListTableViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
-    let groceryItem = items[indexPath.row]
-
-    cell.textLabel?.text = groceryItem.name
-    cell.detailTextLabel?.text = groceryItem.addedByUser
-
-    toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
+    let bookItem = items[indexPath.row]
+    cell.textLabel?.text = bookItem.title
+    
+    let image_url = URL(string: bookItem.imgUrl)!
+    guard let data = try? Data(contentsOf: image_url) else { return cell}
+    cell.imageView?.image = UIImage(data: data)
+    
+    cell.detailTextLabel?.text = bookItem.author
 
     return cell
   }
+
 
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
@@ -91,29 +98,21 @@ class GroceryListTableViewController: UITableViewController {
       tableView.reloadData()
     }
   }
-
+  
+  // MARK: Select Book
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let cell = tableView.cellForRow(at: indexPath) else { return }
-    var groceryItem = items[indexPath.row]
-    let toggledCompletion = !groceryItem.completed
-
-    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
-    groceryItem.completed = toggledCompletion
-    tableView.reloadData()
+    let bookItem = items[indexPath.row]
+    selectedBook = bookItem
+    self.performSegue(withIdentifier: showDetail, sender: nil)
   }
-
-  func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool) {
-    if !isCompleted {
-      cell.accessoryType = .none
-      cell.textLabel?.textColor = .black
-      cell.detailTextLabel?.textColor = .black
-    } else {
-      cell.accessoryType = .checkmark
-      cell.textLabel?.textColor = .gray
-      cell.detailTextLabel?.textColor = .gray
-    }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == showDetail {
+          let detailController = segue.destination as! BookDetailViewController
+          detailController.book = selectedBook
+      }
   }
-
+  
   // MARK: Add Item
   @IBAction func addItemDidTouch(_ sender: AnyObject) {
     let alert = UIAlertController(
@@ -131,7 +130,8 @@ class GroceryListTableViewController: UITableViewController {
       let recording = Recording(
         name: text,
         addedByUser: user.email,
-        completed: false)
+        completed: false,
+        url: "https://images-na.ssl-images-amazon.com/images/I/51trnozKxxL.jpg")
 
       let recordingRef = self.ref.child(text.lowercased())
       recordingRef.setValue(recording.toAnyObject())
