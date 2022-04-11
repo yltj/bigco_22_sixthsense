@@ -1,4 +1,3 @@
-base tutorial: https://www.raywenderlich.com/21133526-firebase-tutorial-getting-started <br/>
 backend setup using [Firebase](https://spotiobook-default-rtdb.firebaseio.com/) <br/>
     
 currently working: 
