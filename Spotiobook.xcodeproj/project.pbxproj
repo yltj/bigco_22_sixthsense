@@ -11,7 +11,8 @@
 		185CB1FE23C78CE6009F7571 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185CB1FD23C78CE6009F7571 /* SceneDelegate.swift */; };
 		185CB20323C78CE6009F7571 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185CB20123C78CE6009F7571 /* Main.storyboard */; };
 		185CB20523C78CE8009F7571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185CB20423C78CE8009F7571 /* Assets.xcassets */; };
-		48132F6627FD2261001D75C5 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48132F6527FD2261001D75C5 /* Recording.swift */; };
+		3A63106D28133D0600FB3071 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A63106C28133D0600FB3071 /* Recording.swift */; };
+		3A63106F28133D5E00FB3071 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A63106E28133D5E00FB3071 /* CreateAccountViewController.swift */; };
 		48132F7627FD3827001D75C5 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48132F7527FD3827001D75C5 /* Launch.storyboard */; };
 		48132F7E28032245001D75C5 /* RecordingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48132F7D28032245001D75C5 /* RecordingsViewController.swift */; };
 		48132F8D28034193001D75C5 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48132F8C28034193001D75C5 /* BookDetailViewController.swift */; };
@@ -32,7 +33,8 @@
 		185CB20223C78CE6009F7571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		185CB20423C78CE8009F7571 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185CB20923C78CE8009F7571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48132F6527FD2261001D75C5 /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recording.swift; path = ../../../Downloads/Grocr_Materials/final/Grocr/Models/Recording.swift; sourceTree = "<group>"; };
+		3A63106C28133D0600FB3071 /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		3A63106E28133D5E00FB3071 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		48132F7527FD3827001D75C5 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		48132F7D28032245001D75C5 /* RecordingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsViewController.swift; sourceTree = "<group>"; };
 		48132F8C28034193001D75C5 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				B6FED562261DB03900346BE3 /* OnlineUsersTableViewController.swift */,
 				48132F7D28032245001D75C5 /* RecordingsViewController.swift */,
 				48132F8C28034193001D75C5 /* BookDetailViewController.swift */,
+				3A63106E28133D5E00FB3071 /* CreateAccountViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -106,7 +109,7 @@
 		B6FED55B261DB02A00346BE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				48132F6527FD2261001D75C5 /* Recording.swift */,
+				3A63106C28133D0600FB3071 /* Recording.swift */,
 				B6FED568261DB04200346BE3 /* User.swift */,
 				48132F91280368E2001D75C5 /* Book.swift */,
 			);
@@ -214,14 +217,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A63106D28133D0600FB3071 /* Recording.swift in Sources */,
 				B6FED563261DB03900346BE3 /* OnlineUsersTableViewController.swift in Sources */,
 				B6FED55D261DB03100346BE3 /* LoginViewController.swift in Sources */,
+				3A63106F28133D5E00FB3071 /* CreateAccountViewController.swift in Sources */,
 				B6FED560261DB03500346BE3 /* BookListTableViewController.swift in Sources */,
 				48132F8D28034193001D75C5 /* BookDetailViewController.swift in Sources */,
 				185CB1FC23C78CE6009F7571 /* AppDelegate.swift in Sources */,
 				185CB1FE23C78CE6009F7571 /* SceneDelegate.swift in Sources */,
 				B6FED569261DB04200346BE3 /* User.swift in Sources */,
-				48132F6627FD2261001D75C5 /* Recording.swift in Sources */,
 				48132F92280368E2001D75C5 /* Book.swift in Sources */,
 				48132F7E28032245001D75C5 /* RecordingsViewController.swift in Sources */,
 			);
