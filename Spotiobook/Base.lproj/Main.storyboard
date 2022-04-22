@@ -315,73 +315,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Last Name " borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHY-uP-Ue8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="First Name " borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OrW-SH-Die">
+                                <rect key="frame" x="67" y="202" width="280" height="45"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Jk6-6a-5CA"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Last Name " borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHY-uP-Ue8">
                                 <rect key="frame" x="67" y="271" width="280" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="489-dn-Uo8"/>
+                                    <constraint firstAttribute="height" constant="45" id="sAI-1j-SdG"/>
                                 </constraints>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="icZ-Q2-Lih">
-                                <rect key="frame" x="67" y="347" width="280" height="45"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="icZ-Q2-Lih">
+                                <rect key="frame" x="67" y="342" width="280" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Ubp-Fa-2Ba"/>
+                                    <constraint firstAttribute="height" constant="45" id="dJ3-6o-knI"/>
                                 </constraints>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CKf-a4-tim">
-                                <rect key="frame" x="67" y="426" width="280" height="45"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CKf-a4-tim">
+                                <rect key="frame" x="67" y="417" width="280" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="CpK-qy-sXU"/>
                                     <constraint firstAttribute="height" constant="45" id="Oiv-ti-gSZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="eB8-NX-lm3"/>
                                 </constraints>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Confirm Password" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ir-za-8Zr">
-                                <rect key="frame" x="67" y="498" width="280" height="45"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Confirm Password" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ir-za-8Zr">
+                                <rect key="frame" x="67" y="491" width="280" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Veh-Xo-cNa"/>
+                                    <constraint firstAttribute="height" constant="45" id="DfY-zI-TUW"/>
                                 </constraints>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="First Name " borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T52-AY-jQc">
-                                <rect key="frame" x="67" y="207" width="280" height="34"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="UME-1Q-JiG"/>
-                                    <constraint firstAttribute="height" constant="45" id="aLu-Zl-wUu"/>
-                                </constraints>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuW-Un-fax">
+                                <rect key="frame" x="67" y="565" width="280" height="48"/>
+                                <color key="backgroundColor" name="logo green"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gga-Gc-gXg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vuW-Un-fax" firstAttribute="trailing" secondItem="7ir-za-8Zr" secondAttribute="trailing" id="0HB-6t-uCM"/>
+                            <constraint firstItem="hHY-uP-Ue8" firstAttribute="leading" secondItem="gga-Gc-gXg" secondAttribute="leading" constant="67" id="3UP-gY-sQD"/>
+                            <constraint firstItem="icZ-Q2-Lih" firstAttribute="top" secondItem="hHY-uP-Ue8" secondAttribute="bottom" constant="26" id="3tc-EP-nzH"/>
+                            <constraint firstItem="OrW-SH-Die" firstAttribute="trailing" secondItem="icZ-Q2-Lih" secondAttribute="trailing" id="4Sc-YM-Fth"/>
+                            <constraint firstItem="7ir-za-8Zr" firstAttribute="leading" secondItem="CKf-a4-tim" secondAttribute="leading" id="6im-0R-atg"/>
+                            <constraint firstItem="icZ-Q2-Lih" firstAttribute="leading" secondItem="CKf-a4-tim" secondAttribute="leading" id="9bq-fo-CIi"/>
+                            <constraint firstItem="7ir-za-8Zr" firstAttribute="top" secondItem="CKf-a4-tim" secondAttribute="bottom" constant="29" id="AnK-bl-JGa"/>
+                            <constraint firstItem="OrW-SH-Die" firstAttribute="leading" secondItem="hHY-uP-Ue8" secondAttribute="leading" id="Gvb-nX-4Yp"/>
+                            <constraint firstItem="OrW-SH-Die" firstAttribute="trailing" secondItem="hHY-uP-Ue8" secondAttribute="trailing" id="HbI-ED-xWJ"/>
+                            <constraint firstItem="icZ-Q2-Lih" firstAttribute="trailing" secondItem="CKf-a4-tim" secondAttribute="trailing" id="LLa-Ks-kW6"/>
+                            <constraint firstItem="OrW-SH-Die" firstAttribute="top" secondItem="gga-Gc-gXg" secondAttribute="top" constant="158" id="PSY-vE-KyN"/>
+                            <constraint firstItem="vuW-Un-fax" firstAttribute="leading" secondItem="7ir-za-8Zr" secondAttribute="leading" id="Wy9-7T-2hL"/>
+                            <constraint firstItem="hHY-uP-Ue8" firstAttribute="top" secondItem="OrW-SH-Die" secondAttribute="bottom" constant="24" id="ZQV-F2-POk"/>
+                            <constraint firstItem="CKf-a4-tim" firstAttribute="top" secondItem="icZ-Q2-Lih" secondAttribute="bottom" constant="30" id="cia-r7-RQH"/>
+                            <constraint firstItem="vuW-Un-fax" firstAttribute="top" secondItem="7ir-za-8Zr" secondAttribute="bottom" constant="29" id="mVw-hk-slg"/>
+                            <constraint firstItem="7ir-za-8Zr" firstAttribute="trailing" secondItem="CKf-a4-tim" secondAttribute="trailing" id="pGB-SQ-QlU"/>
+                            <constraint firstItem="7ir-za-8Zr" firstAttribute="leading" secondItem="hHY-uP-Ue8" secondAttribute="leading" id="por-aX-oXg"/>
+                            <constraint firstItem="gga-Gc-gXg" firstAttribute="bottom" secondItem="vuW-Un-fax" secondAttribute="bottom" constant="249" id="zYw-YR-iL9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iGo-cM-Ed4"/>
                     <connections>
                         <outlet property="confirmPassoword" destination="7ir-za-8Zr" id="YZM-hW-4rd"/>
+                        <outlet property="createAccountButton" destination="vuW-Un-fax" id="3GT-qH-o2i"/>
                         <outlet property="email" destination="icZ-Q2-Lih" id="mip-LL-yMb"/>
-                        <outlet property="firstName" destination="T52-AY-jQc" id="MVU-0z-wMv"/>
+                        <outlet property="firstName" destination="OrW-SH-Die" id="llD-2m-k2F"/>
                         <outlet property="lastName" destination="hHY-uP-Ue8" id="IIi-eM-bpx"/>
                         <outlet property="password" destination="CKf-a4-tim" id="AUC-jf-VJb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yxu-qt-YyH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199" y="1128"/>
+            <point key="canvasLocation" x="1198.5507246376812" y="1127.6785714285713"/>
         </scene>
     </scenes>
     <resources>
