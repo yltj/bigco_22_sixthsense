@@ -67,21 +67,21 @@ class LoginViewController: UIViewController {
     }
   }
 
-  @IBAction func signUpDidTouch(_ sender: AnyObject) {
-    guard
-      let email = enterEmail.text,
-      let password = enterPassword.text,
-      !email.isEmpty,
-      !password.isEmpty
-    else { return }
-    Auth.auth().createUser(withEmail: email, password: password) { _, error in
-      if error == nil {
-        Auth.auth().signIn(withEmail: email, password: password)
-      } else {
-        print("Error in createUser: \(error?.localizedDescription ?? "")")
-      }
-    }
-  }
+//  @IBAction func signUpDidTouch(_ sender: AnyObject) {
+//    guard
+//      let email = enterEmail.text,
+//      let password = enterPassword.text,
+//      !email.isEmpty,
+//      !password.isEmpty
+//    else { return }
+//    Auth.auth().createUser(withEmail: email, password: password) { _, error in
+//      if error == nil {
+//        Auth.auth().signIn(withEmail: email, password: password)
+//      } else {
+//        print("Error in createUser: \(error?.localizedDescription ?? "")")
+//      }
+//    }
+//  }
 }
 
 // MARK: - UITextFieldDelegate

@@ -90,7 +90,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="signUpDidTouch:" destination="Cf0-4p-A3W" eventType="touchUpInside" id="XlT-UM-tKT"/>
                                     <segue destination="q5t-Cf-Wge" kind="show" id="K0S-QU-n4M"/>
                                 </connections>
                             </button>
@@ -384,7 +383,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginDidTouch:" destination="Cf0-4p-A3W" eventType="touchUpInside" id="I5D-Gq-zrC"/>
+                                    <action selector="signUpTouched:" destination="q5t-Cf-Wge" eventType="touchUpInside" id="VMI-py-WJA"/>
+                                    <segue destination="0nU-fQ-kVB" kind="show" identifier="AccountToList" destinationCreationSelector="accountToList:" id="QhA-BI-9rt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -414,7 +414,7 @@
                     <navigationItem key="navigationItem" id="iGo-cM-Ed4"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="confirmPassoword" destination="7ir-za-8Zr" id="YZM-hW-4rd"/>
+                        <outlet property="confirmPassword" destination="7ir-za-8Zr" id="MSi-KB-fPB"/>
                         <outlet property="email" destination="icZ-Q2-Lih" id="mip-LL-yMb"/>
                         <outlet property="firstName" destination="OrW-SH-Die" id="llD-2m-k2F"/>
                         <outlet property="lastName" destination="hHY-uP-Ue8" id="IIi-eM-bpx"/>
@@ -426,6 +426,9 @@
             <point key="canvasLocation" x="1198.5507246376812" y="1127.6785714285713"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="QhA-BI-9rt"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="logo green">
             <color red="0.012000000104308128" green="0.73199999332427979" blue="0.30899998545646667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
