@@ -315,7 +315,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="First Name " borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OrW-SH-Die">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OrW-SH-Die">
                                 <rect key="frame" x="67" y="202" width="280" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -325,7 +325,7 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Last Name " borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHY-uP-Ue8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHY-uP-Ue8">
                                 <rect key="frame" x="67" y="271" width="280" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -335,7 +335,7 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="icZ-Q2-Lih">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="icZ-Q2-Lih">
                                 <rect key="frame" x="67" y="342" width="280" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -345,7 +345,7 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CKf-a4-tim">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CKf-a4-tim">
                                 <rect key="frame" x="67" y="417" width="280" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -355,9 +355,9 @@
                                 </constraints>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Confirm Password" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ir-za-8Zr">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ir-za-8Zr">
                                 <rect key="frame" x="67" y="491" width="280" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -365,43 +365,56 @@
                                 </constraints>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuW-Un-fax">
-                                <rect key="frame" x="67" y="565" width="280" height="48"/>
-                                <color key="backgroundColor" name="logo green"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHX-46-s1h">
+                                <rect key="frame" x="67" y="567" width="280" height="50"/>
+                                <color key="backgroundColor" red="0.01004138123" green="0.7356835008" blue="0.30886852739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="q5G-IM-QcR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginDidTouch:" destination="Cf0-4p-A3W" eventType="touchUpInside" id="I5D-Gq-zrC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gga-Gc-gXg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vuW-Un-fax" firstAttribute="trailing" secondItem="7ir-za-8Zr" secondAttribute="trailing" id="0HB-6t-uCM"/>
                             <constraint firstItem="hHY-uP-Ue8" firstAttribute="leading" secondItem="gga-Gc-gXg" secondAttribute="leading" constant="67" id="3UP-gY-sQD"/>
                             <constraint firstItem="icZ-Q2-Lih" firstAttribute="top" secondItem="hHY-uP-Ue8" secondAttribute="bottom" constant="26" id="3tc-EP-nzH"/>
                             <constraint firstItem="OrW-SH-Die" firstAttribute="trailing" secondItem="icZ-Q2-Lih" secondAttribute="trailing" id="4Sc-YM-Fth"/>
                             <constraint firstItem="7ir-za-8Zr" firstAttribute="leading" secondItem="CKf-a4-tim" secondAttribute="leading" id="6im-0R-atg"/>
                             <constraint firstItem="icZ-Q2-Lih" firstAttribute="leading" secondItem="CKf-a4-tim" secondAttribute="leading" id="9bq-fo-CIi"/>
                             <constraint firstItem="7ir-za-8Zr" firstAttribute="top" secondItem="CKf-a4-tim" secondAttribute="bottom" constant="29" id="AnK-bl-JGa"/>
+                            <constraint firstItem="gHX-46-s1h" firstAttribute="trailing" secondItem="7ir-za-8Zr" secondAttribute="trailing" id="Cf2-DP-yVx"/>
+                            <constraint firstItem="gHX-46-s1h" firstAttribute="top" secondItem="7ir-za-8Zr" secondAttribute="bottom" constant="31" id="Dni-Sj-XT4"/>
                             <constraint firstItem="OrW-SH-Die" firstAttribute="leading" secondItem="hHY-uP-Ue8" secondAttribute="leading" id="Gvb-nX-4Yp"/>
                             <constraint firstItem="OrW-SH-Die" firstAttribute="trailing" secondItem="hHY-uP-Ue8" secondAttribute="trailing" id="HbI-ED-xWJ"/>
                             <constraint firstItem="icZ-Q2-Lih" firstAttribute="trailing" secondItem="CKf-a4-tim" secondAttribute="trailing" id="LLa-Ks-kW6"/>
                             <constraint firstItem="OrW-SH-Die" firstAttribute="top" secondItem="gga-Gc-gXg" secondAttribute="top" constant="158" id="PSY-vE-KyN"/>
-                            <constraint firstItem="vuW-Un-fax" firstAttribute="leading" secondItem="7ir-za-8Zr" secondAttribute="leading" id="Wy9-7T-2hL"/>
+                            <constraint firstItem="gHX-46-s1h" firstAttribute="leading" secondItem="7ir-za-8Zr" secondAttribute="leading" id="XMD-TA-nRk"/>
                             <constraint firstItem="hHY-uP-Ue8" firstAttribute="top" secondItem="OrW-SH-Die" secondAttribute="bottom" constant="24" id="ZQV-F2-POk"/>
                             <constraint firstItem="CKf-a4-tim" firstAttribute="top" secondItem="icZ-Q2-Lih" secondAttribute="bottom" constant="30" id="cia-r7-RQH"/>
-                            <constraint firstItem="vuW-Un-fax" firstAttribute="top" secondItem="7ir-za-8Zr" secondAttribute="bottom" constant="29" id="mVw-hk-slg"/>
                             <constraint firstItem="7ir-za-8Zr" firstAttribute="trailing" secondItem="CKf-a4-tim" secondAttribute="trailing" id="pGB-SQ-QlU"/>
                             <constraint firstItem="7ir-za-8Zr" firstAttribute="leading" secondItem="hHY-uP-Ue8" secondAttribute="leading" id="por-aX-oXg"/>
-                            <constraint firstItem="gga-Gc-gXg" firstAttribute="bottom" secondItem="vuW-Un-fax" secondAttribute="bottom" constant="249" id="zYw-YR-iL9"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="iGo-cM-Ed4"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="confirmPassoword" destination="7ir-za-8Zr" id="YZM-hW-4rd"/>
-                        <outlet property="createAccountButton" destination="vuW-Un-fax" id="3GT-qH-o2i"/>
                         <outlet property="email" destination="icZ-Q2-Lih" id="mip-LL-yMb"/>
                         <outlet property="firstName" destination="OrW-SH-Die" id="llD-2m-k2F"/>
                         <outlet property="lastName" destination="hHY-uP-Ue8" id="IIi-eM-bpx"/>

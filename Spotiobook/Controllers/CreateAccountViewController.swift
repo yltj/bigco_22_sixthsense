@@ -11,12 +11,7 @@ class CreateAccountViewController: UIViewController {
   @IBOutlet weak var email: UITextField!
   @IBOutlet weak var password: UITextField!
   @IBOutlet weak var confirmPassoword: UITextField!
-  
-  @IBOutlet weak var createAccountButton: UIButton!
-  
-  override var preferredStatusBarStyle: UIStatusBarStyle {
-    return .lightContent
-  }
+    
   
   // MARK: UIViewController Lifecycle
   override func viewDidLoad() {
