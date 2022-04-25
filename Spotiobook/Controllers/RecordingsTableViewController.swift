@@ -1,15 +1,32 @@
 import UIKit
+import Firebase
 
 class RecordingsTableViewController: UITableViewController {
-
+    var book: Book!
+    let ref = Database.database().reference(withPath: "recordings")
+    var refObservers: [DatabaseHandle] = []
+    var items: [Recording] = []
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let completed = ref.observe(.value) { snapshot in
+          // 2
+          var newItems: [Recording] = []
+          // 3
+          for child in snapshot.children {
+            // 4
+            if
+              let snapshot = child as? DataSnapshot,
+              let recItem = Recording(snapshot: snapshot) {
+              newItems.append(recItem)
+            }
+          }
+          self.items = newItems
+          print(newItems)
+          self.tableView.reloadData()
+          
+        }
+        refObservers.append(completed)
     }
 
     // MARK: - Table view data source
@@ -22,6 +39,14 @@ class RecordingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
+    }
+  
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+      let item = items[indexPath.row]
+      cell.textLabel?.text = item.name
+
+      return cell
     }
 
     /*

@@ -10,8 +10,6 @@ class BookDetailViewController: UIViewController {
   
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var desc: UILabel!
-  
-    @IBOutlet weak var listen: UIButton!
   // MARK: Properties
     var book: Book!
   
@@ -25,6 +23,11 @@ class BookDetailViewController: UIViewController {
       desc.text = book?.content
 
         // Do any additional setup after loading the view.
+    }
+    @IBAction func listenDidTouch(_ sender: Any) {
+      let vc = RecordingsTableViewController()
+      vc.book = book
+      self.present(vc, animated: true, completion: nil)
     }
   
 
