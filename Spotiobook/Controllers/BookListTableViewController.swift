@@ -130,8 +130,7 @@ class BookListTableViewController: UITableViewController {
       let recording = Recording(
         name: text,
         addedByUser: user.email,
-        completed: false,
-        url: "https://images-na.ssl-images-amazon.com/images/I/51trnozKxxL.jpg")
+        completed: false)
 
       let recordingRef = self.ref.child(text.lowercased())
       recordingRef.setValue(recording.toAnyObject())
