@@ -10,8 +10,6 @@ class BookDetailViewController: UIViewController {
   
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var desc: UILabel!
-  
-    @IBOutlet weak var listen: UIButton!
   // MARK: Properties
     var book: Book!
   
@@ -22,9 +20,14 @@ class BookDetailViewController: UIViewController {
       img.image = UIImage(data: data)
       lbl.text = book?.title
       author.text = book?.author
-      desc.text = book?.content
+      desc.text = book?.desc
 
         // Do any additional setup after loading the view.
+    }
+    @IBAction func listenDidTouch(_ sender: Any) {
+      let vc = RecordingsTableViewController()
+      vc.book = book
+      self.present(vc, animated: true, completion: nil)
     }
   
 

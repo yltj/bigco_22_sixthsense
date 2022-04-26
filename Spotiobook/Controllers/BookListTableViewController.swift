@@ -35,9 +35,6 @@ class BookListTableViewController: UITableViewController {
     navigationItem.leftBarButtonItem = onlineUserCount
     user = User(uid: "FakeId", email: "hungry@person.food")
     
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
     let completed = ref.observe(.value) { snapshot in
       // 2
       var newItems: [Book] = []
@@ -55,6 +52,9 @@ class BookListTableViewController: UITableViewController {
       
     }
     refObservers.append(completed)
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
     handle = Auth.auth().addStateDidChangeListener { _, user in
       guard let user = user else { return }
       self.user = User(authData: user)
@@ -130,8 +130,7 @@ class BookListTableViewController: UITableViewController {
       let recording = Recording(
         name: text,
         addedByUser: user.email,
-        completed: false,
-        url: "https://images-na.ssl-images-amazon.com/images/I/51trnozKxxL.jpg")
+        completed: false)
 
       let recordingRef = self.ref.child(text.lowercased())
       recordingRef.setValue(recording.toAnyObject())

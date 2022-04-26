@@ -1,5 +1,3 @@
-/// Copyright (c) 2021 Razeware LLC
-
 import Firebase
 
 struct Recording {
@@ -8,19 +6,14 @@ struct Recording {
   let name: String
   let addedByUser: String
   var completed: Bool
-  
-  // add book url
-  let url: String
 
   // MARK: Initialize with Raw Data
-  init(name: String, addedByUser: String, completed: Bool, url: String, key: String = "") {
+  init(name: String, addedByUser: String, completed: Bool, key: String = "") {
     self.ref = nil
     self.key = key
     self.name = name
     self.addedByUser = addedByUser
     self.completed = completed
-    
-    self.url = url
   }
 
   // MARK: Initialize with Firebase DataSnapshot
@@ -29,9 +22,9 @@ struct Recording {
       let value = snapshot.value as? [String: AnyObject],
       let name = value["name"] as? String,
       let addedByUser = value["addedByUser"] as? String,
-      let completed = value["completed"] as? Bool,
+      let completed = value["completed"] as? Bool
       
-      let url = value["url"] as? String
+    
     else {
       return nil
     }
@@ -41,8 +34,6 @@ struct Recording {
     self.name = name
     self.addedByUser = addedByUser
     self.completed = completed
-    
-    self.url = url
   }
 
   // MARK: Convert item to AnyObject
@@ -50,7 +41,6 @@ struct Recording {
     return [
       "name": name,
       "addedByUser": addedByUser,
-      "url": url,
       "completed": completed
     ]
   }

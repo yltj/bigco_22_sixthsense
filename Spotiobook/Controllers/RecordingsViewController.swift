@@ -76,10 +76,6 @@ class RecordingsViewController: UITableViewController {
     let groceryItem = items[indexPath.row]
     cell.textLabel?.text = groceryItem.name
     
-    let image_url = URL(string: groceryItem.url)!
-    guard let data = try? Data(contentsOf: image_url) else { return cell}
-    cell.imageView?.image = UIImage(data: data)
-    
     
     cell.detailTextLabel?.text = groceryItem.addedByUser
 
@@ -139,8 +135,7 @@ class RecordingsViewController: UITableViewController {
       let recording = Recording(
         name: text,
         addedByUser: user.email,
-        completed: false,
-        url: "https://images-na.ssl-images-amazon.com/images/I/51trnozKxxL.jpg")
+        completed: false)
 
       let recordingRef = self.ref.child(text.lowercased())
       recordingRef.setValue(recording.toAnyObject())
