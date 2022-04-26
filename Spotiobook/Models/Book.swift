@@ -8,9 +8,10 @@ struct Book {
   let chapter: Int
   let content: String
   let imgUrl: String
+  let desc: String
   
   // MARK: Initialize with Raw Data
-  init(title: String, author: String, chapter: Int, content: String, imgUrl: String, key: String = "") {
+  init(title: String, author: String, chapter: Int, content: String, imgUrl: String, desc: String, key: String = "") {
     self.ref = nil
     self.key = key
     self.title = title
@@ -18,6 +19,7 @@ struct Book {
     self.chapter = chapter
     self.content = content
     self.imgUrl = imgUrl
+    self.desc = desc
   }
 
   // MARK: Initialize with Firebase DataSnapshot
@@ -28,7 +30,8 @@ struct Book {
       let author = value["author"] as? String,
       let chapter = value["chapter"] as? Int,
       let content = value["content"] as? String,
-      let imgUrl = value["imgUrl"] as? String
+      let imgUrl = value["imgUrl"] as? String,
+      let desc = value["desc"] as? String
     
     else {
       return nil
@@ -41,6 +44,7 @@ struct Book {
     self.chapter = chapter
     self.content = content
     self.imgUrl = imgUrl
+    self.desc = desc
   }
 
   // MARK: Convert GroceryItem to AnyObject
@@ -50,7 +54,8 @@ struct Book {
       "author": author,
       "chapter": chapter,
       "content": content,
-      "imgUrl": imgUrl
+      "imgUrl": imgUrl,
+      "desc": desc
     ]
   }
 }

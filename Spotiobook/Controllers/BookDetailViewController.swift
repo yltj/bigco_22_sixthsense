@@ -20,7 +20,7 @@ class BookDetailViewController: UIViewController {
       img.image = UIImage(data: data)
       lbl.text = book?.title
       author.text = book?.author
-      desc.text = book?.content
+      desc.text = book?.desc
 
         // Do any additional setup after loading the view.
     }

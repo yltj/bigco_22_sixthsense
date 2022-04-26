@@ -1,5 +1,3 @@
-/// Copyright (c) 2021 Razeware LLC
-
 import Firebase
 
 struct Recording {
