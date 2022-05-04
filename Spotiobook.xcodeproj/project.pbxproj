@@ -17,7 +17,6 @@
 		48132F7E28032245001D75C5 /* RecordingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48132F7D28032245001D75C5 /* RecordingsViewController.swift */; };
 		48132F8D28034193001D75C5 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48132F8C28034193001D75C5 /* BookDetailViewController.swift */; };
 		48132F92280368E2001D75C5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48132F91280368E2001D75C5 /* Book.swift */; };
-		48132F9C28161B85001D75C5 /* RecordingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48132F9B28161B85001D75C5 /* RecordingsTableViewController.swift */; };
 		485C689327FD17CB00AC236B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 485C689227FD17CB00AC236B /* GoogleService-Info.plist */; };
 		B6FED55D261DB03100346BE3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FED55C261DB03100346BE3 /* LoginViewController.swift */; };
 		B6FED560261DB03500346BE3 /* BookListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FED55F261DB03500346BE3 /* BookListTableViewController.swift */; };
@@ -40,7 +39,6 @@
 		48132F7D28032245001D75C5 /* RecordingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsViewController.swift; sourceTree = "<group>"; };
 		48132F8C28034193001D75C5 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		48132F91280368E2001D75C5 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		48132F9B28161B85001D75C5 /* RecordingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsTableViewController.swift; sourceTree = "<group>"; };
 		485C689227FD17CB00AC236B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B6FED55C261DB03100346BE3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B6FED55F261DB03500346BE3 /* BookListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListTableViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				48132F7D28032245001D75C5 /* RecordingsViewController.swift */,
 				48132F8C28034193001D75C5 /* BookDetailViewController.swift */,
 				3A63106E28133D5E00FB3071 /* CreateAccountViewController.swift */,
-				48132F9B28161B85001D75C5 /* RecordingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -225,7 +222,6 @@
 				B6FED55D261DB03100346BE3 /* LoginViewController.swift in Sources */,
 				3A63106F28133D5E00FB3071 /* CreateAccountViewController.swift in Sources */,
 				B6FED560261DB03500346BE3 /* BookListTableViewController.swift in Sources */,
-				48132F9C28161B85001D75C5 /* RecordingsTableViewController.swift in Sources */,
 				48132F8D28034193001D75C5 /* BookDetailViewController.swift in Sources */,
 				185CB1FC23C78CE6009F7571 /* AppDelegate.swift in Sources */,
 				185CB1FE23C78CE6009F7571 /* SceneDelegate.swift in Sources */,

@@ -5,6 +5,7 @@ struct Recording {
   let key: String
   let name: String
   let addedByUser: String
+  let s3path: String
   var completed: Bool
 
   // MARK: Initialize with Raw Data
@@ -14,6 +15,7 @@ struct Recording {
     self.name = name
     self.addedByUser = addedByUser
     self.completed = completed
+    self.s3path = "s3://spotiobooks/name"
   }
 
   // MARK: Initialize with Firebase DataSnapshot
@@ -22,7 +24,8 @@ struct Recording {
       let value = snapshot.value as? [String: AnyObject],
       let name = value["name"] as? String,
       let addedByUser = value["addedByUser"] as? String,
-      let completed = value["completed"] as? Bool
+      let completed = value["completed"] as? Bool,
+      let s3path = value["s3path"] as? String
       
     
     else {
@@ -34,6 +37,7 @@ struct Recording {
     self.name = name
     self.addedByUser = addedByUser
     self.completed = completed
+    self.s3path = s3path
   }
 
   // MARK: Convert item to AnyObject
@@ -41,7 +45,8 @@ struct Recording {
     return [
       "name": name,
       "addedByUser": addedByUser,
-      "completed": completed
+      "completed": completed,
+      "s3path": s3path
     ]
   }
 }

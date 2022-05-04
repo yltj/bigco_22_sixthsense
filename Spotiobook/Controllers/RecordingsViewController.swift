@@ -5,6 +5,7 @@ class RecordingsViewController: UITableViewController {
   // MARK: Constants
   let listToUsers = "ListToUsers"
 
+  var book: Book!
   // MARK: Properties
   var items: [Recording] = []
   var user: User?
@@ -22,8 +23,8 @@ class RecordingsViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    self.tableView.register(UITableViewCell.classForKeyedArchiver(), forCellReuseIdentifier: "RecordingCell")
     tableView.allowsMultipleSelectionDuringEditing = false
-
     onlineUserCount = UIBarButtonItem(
       title: "1",
       style: .plain,
@@ -32,10 +33,6 @@ class RecordingsViewController: UITableViewController {
     onlineUserCount.tintColor = .white
     navigationItem.leftBarButtonItem = onlineUserCount
     user = User(uid: "FakeId", email: "hungry@person.food")
-    
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
     let completed = ref.observe(.value) { snapshot in
       // 2
       var newItems: [Recording] = []
@@ -53,6 +50,9 @@ class RecordingsViewController: UITableViewController {
       
     }
     refObservers.append(completed)
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
     handle = Auth.auth().addStateDidChangeListener { _, user in
       guard let user = user else { return }
       self.user = User(authData: user)
@@ -68,19 +68,19 @@ class RecordingsViewController: UITableViewController {
 
   // MARK: UITableView Delegate methods
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    print("ITEM", items.count)
     return items.count
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "RecordingCell", for: indexPath)
+    // write your code here 
     let groceryItem = items[indexPath.row]
     cell.textLabel?.text = groceryItem.name
-    
-    
+    print(groceryItem.name)
     cell.detailTextLabel?.text = groceryItem.addedByUser
-
+    print(groceryItem.addedByUser)
     toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
-
     return cell
   }
 
