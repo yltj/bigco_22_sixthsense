@@ -539,7 +539,18 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fGJ-dS-saT">
+                                            <rect key="frame" x="326" y="0.0" width="68" height="86"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="68" id="z8c-t0-x60"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fGJ-dS-saT" firstAttribute="trailing" secondItem="pd4-tN-14r" secondAttribute="trailingMargin" id="QPL-0g-k39"/>
+                                        <constraint firstItem="fGJ-dS-saT" firstAttribute="top" secondItem="pd4-tN-14r" secondAttribute="topMargin" constant="-11.5" id="Zda-OM-NIv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fGJ-dS-saT" secondAttribute="bottom" constant="-9.5" id="owD-t6-pla"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -558,6 +569,7 @@
         <segue reference="QhA-BI-9rt"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="play.circle" catalog="system" width="128" height="121"/>
         <namedColor name="logo green">
             <color red="0.012000000104308128" green="0.73199999332427979" blue="0.30899998545646667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

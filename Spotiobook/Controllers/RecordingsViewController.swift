@@ -82,32 +82,11 @@ class RecordingsViewController: UITableViewController {
     let groceryItem = items[indexPath.row]
     cell.textLabel?.text = groceryItem.name
     cell.detailTextLabel?.text = groceryItem.addedByUser
-    toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
-    let url = Bundle.main.url(forResource: "sivastuthi", withExtension: "mp3")
-
-        do {
-            player = try AVAudioPlayer(contentsOf: url!)
-            let player = player!
-
-            player.prepareToPlay()
-            player.play()
-
-        } catch let error as NSError {
-            print(error.description)
-        }
-
-
+    cell.imageView?.image = UIImage(named: "play.circle")
+//    toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
     return cell
   }
-  
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      let selectedTrail = trails[indexPath.row]
-      
-      if let viewController = storyboard?.instantiateViewController(identifier: "TrailViewController") as? TrailViewController {
-          viewController.trail = selectedTrail
-          navigationController?.pushViewController(viewController, animated: true)
-      }
-  }
+
   
 //  func getData(completion: (Int) -> Void){
 //    let gs = storage.reference(forURL: "gs://spotiobook.appspot.com/business.csv")
@@ -140,10 +119,26 @@ class RecordingsViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let cell = tableView.cellForRow(at: indexPath) else { return }
     var groceryItem = items[indexPath.row]
-    let toggledCompletion = !groceryItem.completed
+//    let toggledCompletion = !groceryItem.completed
+//
+//    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
+//    groceryItem.completed = toggledCompletion
+    print("ROW IS SELECTED")
+    var url = Bundle.main.url(forResource: "sivastuthi", withExtension: "mp3")
+    if groceryItem.name == "Great Gatsby" {
+      url = Bundle.main.url(forResource: "greatgatsby_01_fitzgerald_64kb", withExtension: "mp3")
+    }
+        do {
+            player = try AVAudioPlayer(contentsOf: url!)
+            let player = player!
 
-    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
-    groceryItem.completed = toggledCompletion
+            player.prepareToPlay()
+            player.play()
+
+        } catch let error as NSError {
+            print(error.description)
+        }
+    
     tableView.reloadData()
   }
 
