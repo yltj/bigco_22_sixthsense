@@ -49,6 +49,7 @@ class NarrateViewController: UIViewController, AVAudioRecorderDelegate {
     if !recordingInProgress {
       recordingInProgress = true
       print("RECORDING")
+      RecordButton.setImage(UIImage(systemName: "stop.circle.fill"), for: .normal)
       do {
           audioRecorder = try AVAudioRecorder(url: getFileURL(), settings: settings)
           audioRecorder.delegate = self
@@ -58,6 +59,7 @@ class NarrateViewController: UIViewController, AVAudioRecorderDelegate {
         }
     } else {
       print("RECORDING STOP")
+      RecordButton.setImage(UIImage(systemName: "mic.circle.fill"), for: .normal)
       recordingInProgress = false
       audioRecorder.stop()
     }
