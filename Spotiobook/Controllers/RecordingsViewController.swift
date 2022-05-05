@@ -82,7 +82,8 @@ class RecordingsViewController: UITableViewController {
     let groceryItem = items[indexPath.row]
     cell.textLabel?.text = groceryItem.name
     cell.detailTextLabel?.text = groceryItem.addedByUser
-    cell.imageView?.image = UIImage(named: "play.circle")
+    let im = UIImage(systemName: "play.circle")
+    cell.imageView?.image = im
 //    toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
     return cell
   }
