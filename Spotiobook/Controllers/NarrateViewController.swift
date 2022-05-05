@@ -33,19 +33,19 @@ class NarrateViewController: UIViewController, AVAudioRecorderDelegate {
     }
   }
   @IBAction func recordTouched(_ sender: Any) {
-    let audioFilename = URL(string: "recording.m4a")
+//    let audioFilename = URL(string: "recording.m4a")
     let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
             AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
-    
+
     if !recordingInProgress {
       recordingInProgress = true
-      print("RECRODING")
+      print("RECORDING")
       do {
-          audioRecorder = try AVAudioRecorder(url: audioFilename!, settings: settings)
+          audioRecorder = try AVAudioRecorder(url: getFileURL(), settings: settings)
           audioRecorder.delegate = self
           audioRecorder.record()
         } catch {
@@ -57,6 +57,22 @@ class NarrateViewController: UIViewController, AVAudioRecorderDelegate {
       audioRecorder.stop()
     }
 
+  }
+  
+  func getCacheDirectory() -> String{
+      let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+      return paths[0]
+  }
+  
+  func getFileURL() -> URL{
+//      let path = getCacheDirectory().appending("recording.m4a")
+//      let filePath = NSURL(fileURLWithPath: path)
+//      return filePath
+    let fileName = "swathiaudio.m4a"
+    let docDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+    let fileURL = docDirURL.appendingPathComponent(fileName)
+    print(fileURL)
+    return fileURL
   }
   
   @IBAction func stopRecord(_ sender: Any) {
