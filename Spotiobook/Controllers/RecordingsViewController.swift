@@ -10,7 +10,7 @@ class RecordingsViewController: UITableViewController {
   let storage = Storage.storage()
 
   var book: Book!
-  var player: AVAudioPlayer?
+  var audioplayer: AVAudioPlayer?
   // MARK: Properties
   var items: [Recording] = []
   var user: User?
@@ -130,8 +130,8 @@ class RecordingsViewController: UITableViewController {
       url = Bundle.main.url(forResource: "greatgatsby_01_fitzgerald_64kb", withExtension: "mp3")
     }
         do {
-            player = try AVAudioPlayer(contentsOf: url!)
-            let player = player!
+            audioplayer = try AVAudioPlayer(contentsOf: url!)
+            let player = audioplayer!
 
             player.prepareToPlay()
             player.play()

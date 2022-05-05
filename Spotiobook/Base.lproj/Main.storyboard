@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pqb-l0-WHh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pqb-l0-WHh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -142,7 +142,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" textLabel="YK7-x4-Tkc" rowHeight="60" style="IBUITableViewCellStyleDefault" id="3gD-he-O1t">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3gD-he-O1t" id="kvp-6R-T8D">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -192,7 +192,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" textLabel="XXw-TV-N7F" detailTextLabel="cRc-H7-cDb" rowHeight="144" style="IBUITableViewCellStyleSubtitle" id="EuG-QY-az6" customClass="UI">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="144"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EuG-QY-az6" id="9IL-4T-l7S" customClass="UITableViewCell">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
@@ -321,7 +321,7 @@
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="unX-Go-hmN" kind="show" id="jmq-ty-29H"/>
+                                    <segue destination="unX-Go-hmN" kind="show" identifier="narrateContent" id="jmq-ty-29H"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zUk-N2-h8e">
@@ -515,7 +515,7 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordingCell" rowHeight="88" id="xs6-iF-H4S" customClass="UI">
-                                <rect key="frame" x="0.0" y="68.5" width="414" height="88"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xs6-iF-H4S" id="pd4-tN-14r">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
@@ -575,16 +575,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book Content something something something................." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0la-HU-t7o" customClass="Narrate">
-                                <rect key="frame" x="20" y="123" width="437" height="510"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wI8-VB-fVp">
-                                <rect key="frame" x="118" y="682" width="179" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wI8-VB-fVp">
+                                <rect key="frame" x="118" y="728" width="179" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="RecordButton"/>
                                 <connections>
@@ -592,13 +584,32 @@
                                     <action selector="stopRecord:" destination="unX-Go-hmN" eventType="touchDownRepeat" id="fO8-J0-apF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Content something something something................." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0la-HU-t7o" customClass="Narrate">
+                                <rect key="frame" x="20" y="102" width="374" height="556"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="556" id="zFe-ZS-oNQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EOJ-l2-dMS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EOJ-l2-dMS" firstAttribute="trailing" secondItem="0la-HU-t7o" secondAttribute="trailing" constant="20" id="AB3-lQ-ZLU"/>
+                            <constraint firstItem="EOJ-l2-dMS" firstAttribute="trailing" secondItem="wI8-VB-fVp" secondAttribute="trailing" constant="117" id="AKI-WT-qj8"/>
+                            <constraint firstItem="EOJ-l2-dMS" firstAttribute="trailing" secondItem="0la-HU-t7o" secondAttribute="trailing" constant="20" id="MNf-4Z-Bjs"/>
+                            <constraint firstItem="wI8-VB-fVp" firstAttribute="top" secondItem="0la-HU-t7o" secondAttribute="bottom" constant="70" id="PzB-BF-ENf"/>
+                            <constraint firstItem="0la-HU-t7o" firstAttribute="top" secondItem="EOJ-l2-dMS" secondAttribute="top" constant="14" id="qtc-fR-d8M"/>
+                            <constraint firstItem="0la-HU-t7o" firstAttribute="leading" secondItem="EOJ-l2-dMS" secondAttribute="leading" constant="20" id="sT7-Qb-Fkk"/>
+                            <constraint firstItem="wI8-VB-fVp" firstAttribute="leading" secondItem="EOJ-l2-dMS" secondAttribute="leading" constant="118" id="yrT-hK-0oq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d0W-c4-hBa"/>
                     <connections>
                         <outlet property="RecordButton" destination="wI8-VB-fVp" id="oZb-Nb-Ojb"/>
+                        <outlet property="bookcontent" destination="0la-HU-t7o" id="e8x-Ym-uhI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbU-SB-jD1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

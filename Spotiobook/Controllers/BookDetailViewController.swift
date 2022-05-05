@@ -29,6 +29,12 @@ class BookDetailViewController: UIViewController {
       vc.book = book
       self.present(vc, animated: true, completion: nil)
     }
-  
+    
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "narrateContent" {
+      let narrateController = segue.destination as! NarrateViewController
+      narrateController.currBook = book
+    }
+  }
 
 }

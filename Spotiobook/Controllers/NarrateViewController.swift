@@ -6,15 +6,20 @@ import AVFoundation
 class NarrateViewController: UIViewController, AVAudioRecorderDelegate {
 
   
+  @IBOutlet weak var bookcontent: UILabel!
   @IBOutlet weak var RecordButton: UIButton!
   //  @IBOutlet weak var RecordButton: UIButton!
   var recordingSession: AVAudioSession!
   var audioRecorder: AVAudioRecorder!
   var recordingInProgress: Bool = false
   
+  // MARK: Properties
+  var currBook: Book!
+  
   // MARK: UIViewController Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    bookcontent.text = currBook?.content
     recordingSession = AVAudioSession.sharedInstance()
     do {
         try recordingSession.setCategory(.playAndRecord, mode: .default)
