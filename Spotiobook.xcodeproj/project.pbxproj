@@ -20,6 +20,7 @@
 		3A5476162823742000784D9A /* greatgatsby_01_fitzgerald_64kb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A5476152823742000784D9A /* greatgatsby_01_fitzgerald_64kb.mp3 */; };
 		3A63106D28133D0600FB3071 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A63106C28133D0600FB3071 /* Recording.swift */; };
 		3A63106F28133D5E00FB3071 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A63106E28133D5E00FB3071 /* CreateAccountViewController.swift */; };
+		3ACAEBE92824616D00E37C80 /* NarrateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACAEBE82824616D00E37C80 /* NarrateViewController.swift */; };
 		48132F7627FD3827001D75C5 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48132F7527FD3827001D75C5 /* Launch.storyboard */; };
 		48132F7E28032245001D75C5 /* RecordingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48132F7D28032245001D75C5 /* RecordingsViewController.swift */; };
 		48132F8D28034193001D75C5 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48132F8C28034193001D75C5 /* BookDetailViewController.swift */; };
@@ -42,6 +43,7 @@
 		3A5476152823742000784D9A /* greatgatsby_01_fitzgerald_64kb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = greatgatsby_01_fitzgerald_64kb.mp3; sourceTree = "<group>"; };
 		3A63106C28133D0600FB3071 /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		3A63106E28133D5E00FB3071 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		3ACAEBE82824616D00E37C80 /* NarrateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrateViewController.swift; sourceTree = "<group>"; };
 		48132F7527FD3827001D75C5 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		48132F7D28032245001D75C5 /* RecordingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsViewController.swift; sourceTree = "<group>"; };
 		48132F8C28034193001D75C5 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				3A54761328235C2C00784D9A /* sivastuthi.mp3 */,
 				48132F8C28034193001D75C5 /* BookDetailViewController.swift */,
 				3A63106E28133D5E00FB3071 /* CreateAccountViewController.swift */,
+				3ACAEBE82824616D00E37C80 /* NarrateViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				185CB1FE23C78CE6009F7571 /* SceneDelegate.swift in Sources */,
 				B6FED569261DB04200346BE3 /* User.swift in Sources */,
 				48132F92280368E2001D75C5 /* Book.swift in Sources */,
+				3ACAEBE92824616D00E37C80 /* NarrateViewController.swift in Sources */,
 				48132F7E28032245001D75C5 /* RecordingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

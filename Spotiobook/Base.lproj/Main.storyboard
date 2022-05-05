@@ -320,6 +320,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="unX-Go-hmN" kind="show" id="jmq-ty-29H"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zUk-N2-h8e">
                                 <rect key="frame" x="188" y="275" width="75" height="32"/>
@@ -564,9 +567,47 @@
             </objects>
             <point key="canvasLocation" x="1744.9275362318842" y="-275.22321428571428"/>
         </scene>
+        <!--NarrateViewController-->
+        <scene sceneID="wU3-L3-cum">
+            <objects>
+                <viewController title="NarrateViewController" id="unX-Go-hmN" customClass="NarrateViewController" customModule="Spotiobook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BTB-Uy-gg6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book Content something something something................." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0la-HU-t7o" customClass="Narrate">
+                                <rect key="frame" x="20" y="123" width="437" height="510"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wI8-VB-fVp">
+                                <rect key="frame" x="118" y="682" width="179" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="RecordButton"/>
+                                <connections>
+                                    <action selector="recordTouched:" destination="unX-Go-hmN" eventType="touchDown" id="lbe-iq-igl"/>
+                                    <action selector="stopRecord:" destination="unX-Go-hmN" eventType="touchDownRepeat" id="fO8-J0-apF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EOJ-l2-dMS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="d0W-c4-hBa"/>
+                    <connections>
+                        <outlet property="RecordButton" destination="wI8-VB-fVp" id="oZb-Nb-Ojb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZbU-SB-jD1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2766.666666666667" y="-291.29464285714283"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QhA-BI-9rt"/>
+        <segue reference="Uqz-Y3-vdU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="play.circle" catalog="system" width="128" height="121"/>
