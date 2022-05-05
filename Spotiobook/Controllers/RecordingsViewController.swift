@@ -1,10 +1,16 @@
 import UIKit
 import Firebase
+import FirebaseStorage
+import AVFoundation
+
 
 class RecordingsViewController: UITableViewController {
   // MARK: Constants
   let listToUsers = "ListToUsers"
+  let storage = Storage.storage()
 
+  var book: Book!
+  var player: AVAudioPlayer?
   // MARK: Properties
   var items: [Recording] = []
   var user: User?
@@ -22,8 +28,8 @@ class RecordingsViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    self.tableView.register(UITableViewCell.classForKeyedArchiver(), forCellReuseIdentifier: "RecordingCell")
     tableView.allowsMultipleSelectionDuringEditing = false
-
     onlineUserCount = UIBarButtonItem(
       title: "1",
       style: .plain,
@@ -32,10 +38,6 @@ class RecordingsViewController: UITableViewController {
     onlineUserCount.tintColor = .white
     navigationItem.leftBarButtonItem = onlineUserCount
     user = User(uid: "FakeId", email: "hungry@person.food")
-    
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
     let completed = ref.observe(.value) { snapshot in
       // 2
       var newItems: [Recording] = []
@@ -53,6 +55,9 @@ class RecordingsViewController: UITableViewController {
       
     }
     refObservers.append(completed)
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
     handle = Auth.auth().addStateDidChangeListener { _, user in
       guard let user = user else { return }
       self.user = User(authData: user)
@@ -68,21 +73,37 @@ class RecordingsViewController: UITableViewController {
 
   // MARK: UITableView Delegate methods
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    print("ITEM", items.count)
     return items.count
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "RecordingCell", for: indexPath)
     let groceryItem = items[indexPath.row]
     cell.textLabel?.text = groceryItem.name
-    
-    
     cell.detailTextLabel?.text = groceryItem.addedByUser
-
-    toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
-
+    let im = UIImage(systemName: "play.circle")
+    cell.imageView?.image = im
+//    toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
     return cell
   }
+
+  
+//  func getData(completion: (Int) -> Void){
+//    let gs = storage.reference(forURL: "gs://spotiobook.appspot.com/business.csv")
+////    let ref = gs.child("business.csv")
+//    var x = gs.getData(maxSize: 10000000000) { data, error in
+//      if let error = error {
+//        print("ERROR", error)
+//      }
+//
+//      if let data = data {
+//                  if let csvdata = UIImage(data: data) {
+//                      completion(myImage)
+//                  }
+//              }
+//    }
+//  }
 
 
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -99,10 +120,26 @@ class RecordingsViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let cell = tableView.cellForRow(at: indexPath) else { return }
     var groceryItem = items[indexPath.row]
-    let toggledCompletion = !groceryItem.completed
+//    let toggledCompletion = !groceryItem.completed
+//
+//    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
+//    groceryItem.completed = toggledCompletion
+    print("ROW IS SELECTED")
+    var url = Bundle.main.url(forResource: "sivastuthi", withExtension: "mp3")
+    if groceryItem.name == "Great Gatsby" {
+      url = Bundle.main.url(forResource: "greatgatsby_01_fitzgerald_64kb", withExtension: "mp3")
+    }
+        do {
+            player = try AVAudioPlayer(contentsOf: url!)
+            let player = player!
 
-    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
-    groceryItem.completed = toggledCompletion
+            player.prepareToPlay()
+            player.play()
+
+        } catch let error as NSError {
+            print(error.description)
+        }
+    
     tableView.reloadData()
   }
 

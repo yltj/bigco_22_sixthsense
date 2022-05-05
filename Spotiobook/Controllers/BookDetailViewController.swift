@@ -25,7 +25,7 @@ class BookDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func listenDidTouch(_ sender: Any) {
-      let vc = RecordingsTableViewController()
+      let vc = RecordingsViewController()
       vc.book = book
       self.present(vc, animated: true, completion: nil)
     }
