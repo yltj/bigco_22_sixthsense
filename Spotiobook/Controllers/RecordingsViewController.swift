@@ -1,11 +1,16 @@
 import UIKit
 import Firebase
+import FirebaseStorage
+import AVFoundation
+
 
 class RecordingsViewController: UITableViewController {
   // MARK: Constants
   let listToUsers = "ListToUsers"
+  let storage = Storage.storage()
 
   var book: Book!
+  var player: AVAudioPlayer?
   // MARK: Properties
   var items: [Recording] = []
   var user: User?
@@ -74,15 +79,51 @@ class RecordingsViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "RecordingCell", for: indexPath)
-    // write your code here 
     let groceryItem = items[indexPath.row]
     cell.textLabel?.text = groceryItem.name
-    print(groceryItem.name)
     cell.detailTextLabel?.text = groceryItem.addedByUser
-    print(groceryItem.addedByUser)
     toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
+    let url = Bundle.main.url(forResource: "sivastuthi", withExtension: "mp3")
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url!)
+            let player = player!
+
+            player.prepareToPlay()
+            player.play()
+
+        } catch let error as NSError {
+            print(error.description)
+        }
+
+
     return cell
   }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let selectedTrail = trails[indexPath.row]
+      
+      if let viewController = storyboard?.instantiateViewController(identifier: "TrailViewController") as? TrailViewController {
+          viewController.trail = selectedTrail
+          navigationController?.pushViewController(viewController, animated: true)
+      }
+  }
+  
+//  func getData(completion: (Int) -> Void){
+//    let gs = storage.reference(forURL: "gs://spotiobook.appspot.com/business.csv")
+////    let ref = gs.child("business.csv")
+//    var x = gs.getData(maxSize: 10000000000) { data, error in
+//      if let error = error {
+//        print("ERROR", error)
+//      }
+//
+//      if let data = data {
+//                  if let csvdata = UIImage(data: data) {
+//                      completion(myImage)
+//                  }
+//              }
+//    }
+//  }
 
 
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
