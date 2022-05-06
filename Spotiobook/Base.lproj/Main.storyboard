@@ -575,44 +575,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Content something something something................." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0la-HU-t7o" customClass="Narrate">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book Content something something something................." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0la-HU-t7o" customClass="Narrate">
                                 <rect key="frame" x="20" y="102" width="374" height="556"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="556" id="zFe-ZS-oNQ"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wI8-VB-fVp">
-                                <rect key="frame" x="151" y="762" width="633" height="90"/>
+                                <rect key="frame" x="52" y="776" width="72" height="68"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="633" id="LIx-My-p1C"/>
-                                    <constraint firstAttribute="height" constant="90" id="giN-sz-gcq"/>
+                                    <constraint firstAttribute="width" constant="72" id="eds-m1-uMv"/>
                                 </constraints>
                                 <color key="tintColor" name="logo green"/>
-                                <state key="normal" title="RecordButton" image="mic.circle.fill" catalog="system"/>
+                                <state key="normal" image="mic.circle.fill" catalog="system"/>
                                 <connections>
                                     <action selector="recordTouched:" destination="unX-Go-hmN" eventType="touchDown" id="lbe-iq-igl"/>
                                     <action selector="stopRecord:" destination="unX-Go-hmN" eventType="touchDownRepeat" id="fO8-J0-apF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15g-Fh-GLt">
+                                <rect key="frame" x="287" y="776" width="72" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="JkE-J5-uZ4"/>
+                                    <constraint firstAttribute="height" constant="68" id="q40-1g-Cx2"/>
+                                </constraints>
+                                <color key="tintColor" name="logo green"/>
+                                <state key="normal" image="play.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="playback:" destination="unX-Go-hmN" eventType="touchDown" id="gr1-cR-BXO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EOJ-l2-dMS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EOJ-l2-dMS" firstAttribute="trailing" secondItem="0la-HU-t7o" secondAttribute="trailing" constant="20" id="AB3-lQ-ZLU"/>
-                            <constraint firstItem="EOJ-l2-dMS" firstAttribute="trailing" secondItem="0la-HU-t7o" secondAttribute="trailing" constant="20" id="MNf-4Z-Bjs"/>
-                            <constraint firstItem="EOJ-l2-dMS" firstAttribute="bottom" secondItem="wI8-VB-fVp" secondAttribute="bottom" constant="10" id="d5x-dE-ck3"/>
-                            <constraint firstItem="wI8-VB-fVp" firstAttribute="leading" secondItem="EOJ-l2-dMS" secondAttribute="leading" constant="151" id="mfL-X0-CtY"/>
-                            <constraint firstItem="0la-HU-t7o" firstAttribute="top" secondItem="EOJ-l2-dMS" secondAttribute="top" constant="14" id="qtc-fR-d8M"/>
-                            <constraint firstItem="0la-HU-t7o" firstAttribute="leading" secondItem="EOJ-l2-dMS" secondAttribute="leading" constant="20" id="sT7-Qb-Fkk"/>
+                            <constraint firstItem="wI8-VB-fVp" firstAttribute="leading" secondItem="EOJ-l2-dMS" secondAttribute="leading" constant="52" id="0TG-aj-lIi"/>
+                            <constraint firstItem="EOJ-l2-dMS" firstAttribute="bottom" secondItem="15g-Fh-GLt" secondAttribute="bottom" constant="18" id="1Vv-p5-iCd"/>
+                            <constraint firstItem="15g-Fh-GLt" firstAttribute="baseline" secondItem="wI8-VB-fVp" secondAttribute="baseline" id="4MN-UP-hmZ"/>
+                            <constraint firstItem="15g-Fh-GLt" firstAttribute="baseline" secondItem="wI8-VB-fVp" secondAttribute="firstBaseline" id="4bk-oz-Hif"/>
+                            <constraint firstItem="15g-Fh-GLt" firstAttribute="firstBaseline" secondItem="wI8-VB-fVp" secondAttribute="baseline" id="L6d-Xj-6s9"/>
+                            <constraint firstItem="15g-Fh-GLt" firstAttribute="firstBaseline" secondItem="wI8-VB-fVp" secondAttribute="firstBaseline" id="Tyu-m2-hw2"/>
+                            <constraint firstItem="EOJ-l2-dMS" firstAttribute="trailing" secondItem="15g-Fh-GLt" secondAttribute="trailing" constant="55" id="gam-dT-fX6"/>
+                            <constraint firstItem="15g-Fh-GLt" firstAttribute="centerY" secondItem="wI8-VB-fVp" secondAttribute="centerY" id="kKd-LJ-0yd"/>
+                            <constraint firstItem="15g-Fh-GLt" firstAttribute="bottom" secondItem="wI8-VB-fVp" secondAttribute="bottom" id="tDy-mL-t4t"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d0W-c4-hBa"/>
                     <connections>
                         <outlet property="RecordButton" destination="wI8-VB-fVp" id="oZb-Nb-Ojb"/>
                         <outlet property="bookcontent" destination="0la-HU-t7o" id="e8x-Ym-uhI"/>
+                        <outlet property="playButton" destination="15g-Fh-GLt" id="jqU-lJ-bae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbU-SB-jD1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -626,6 +639,7 @@
     <resources>
         <image name="mic.circle.fill" catalog="system" width="128" height="121"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="logo green">
             <color red="0.012000000104308128" green="0.73199999332427979" blue="0.30899998545646667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

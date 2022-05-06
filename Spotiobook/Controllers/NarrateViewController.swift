@@ -12,9 +12,14 @@ class NarrateViewController: UIViewController, AVAudioRecorderDelegate {
   var recordingSession: AVAudioSession!
   var audioRecorder: AVAudioRecorder!
   var recordingInProgress: Bool = false
+  var audioplayer: AVAudioPlayer?
+  var avplayer: AVPlayer?
+  var playing: Bool = false
   
+  @IBOutlet weak var playButton: UIButton!
   // MARK: Properties
   var currBook: Book!
+  var filePath: URL = URL(string: "something")!
   
   // MARK: UIViewController Lifecycle
   override func viewDidLoad() {
@@ -77,13 +82,42 @@ class NarrateViewController: UIViewController, AVAudioRecorderDelegate {
 //      return filePath
     let fileName = "swathiaudio.m4a"
     let docDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-    let fileURL = docDirURL.appendingPathComponent(fileName)
-    print(fileURL)
-    return fileURL
+    filePath = docDirURL.appendingPathComponent(fileName)
+    print(filePath)
+    return filePath
   }
   
   @IBAction func stopRecord(_ sender: Any) {
 //    print("STOPPED RECORD")
   }
+  
+  
+  @IBAction func playback(_ sender: Any) {
+    print("PLAYING BACK")
+//    let url = Bundle.main.url(forResource: filePath.absoluteString, withExtension: "m4a")
+//    print(url)
+
+//        do {
+//            audioplayer = try AVAudioPlayer(contentsOf: url!)
+//            let player = audioplayer!
+//
+//            player.prepareToPlay()
+//            player.play()
+//
+//        } catch let error as NSError {
+//            print(error.description)
+//        }
+    
+      avplayer = AVPlayer(url: filePath)
+    
+        if !playing {
+          avplayer!.play()
+          playing = true
+        }
+        else {
+          avplayer!.pause()
+          playing = false
+        }
+    }
 }
 
